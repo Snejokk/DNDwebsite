@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- Подключаем ОСНОВНОЙ файл стилей -->
+    <link href="../CSS/FirstPageCss.css" rel="stylesheet">
+    <!-- Блоки <style> убраны -->
+</head>
+<body>
+    <div id="square2"></div>
+    <!-- Элемент "ALPHA" - позиционируем отдельно -->
+    <div class="element"> ALPHA </div>
+
+    <!-- Контейнер для кнопок -->
+    <div class="container">
+        <!-- Кнопки теперь просто flex-элементы внутри контейнера -->
+        <button id="myDiv2" onclick="openNewPage2()" class="LeftButtonChangeLog">Changelog</button>
+        <button id="myDiv1" onclick="openNewPage1()" class="Father">start</button> <!-- Центральная кнопка -->
+        <button id="myDiv3" onclick="openNewPage3()" class="RightButtonDescription">Documentation</button>
+    </div>
+
+    <!-- Фиксированные элементы -->
+    <div class="vignette"></div>
+    <div id="square"></div>
+
+
+    <!-- Скрипт в конце body -->
+    <script src="../JS/FirstPageScripts.js"></script>
+    <div id="square3"></div>
+
+</body>
+</html>

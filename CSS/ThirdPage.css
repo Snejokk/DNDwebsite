@@ -1,0 +1,265 @@
+/* =============== ОСНОВНЫЕ СТИЛИ И ШРИФТЫ =============== */
+
+/* Убедитесь, что шрифт VT323 подключен в HTML через <link> */
+/* Например: <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> */
+
+@font-face {
+  font-family: 'DeterminationMonoRus';
+  src: url('../FILES/determinationmonorusbylyajk.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Импорт шрифта */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+  background-color: #555555; /* Начальный средний серый цвет */
+  animation: greyPulse 5s ease-in-out infinite; /* Применяем анимацию: 5 секунд, плавное, бесконечно */
+  min-height: 100vh; /* Занимает минимум высоту экрана */
+  margin: 0; /* Убираем отступы браузера по умолчанию */
+  padding: 20px; /* Добавляем общие отступы по краям */
+  box-sizing: border-box; /* padding не увеличивает размер body */
+  height: 100%;
+  overflow: hidden; /* Скрываем прокрутку */
+
+  /* --- Flexbox для вертикального расположения и горизонтального центрирования --- */
+  display: flex;
+  flex-direction: column; /* Элементы идут друг под другом */
+  align-items: center; /* Центрируем все дочерние элементы по горизонтали */
+  gap: 25px; /* Расстояние между основными блоками (.Name, .Bar, .Bla, .BackB) */
+
+  /* Базовые стили текста для body (наследуются) */
+  font-family: 'DeterminationMonoRus', 'VT323', monospace;
+  color: LightGrey; /* Цвет текста по умолчанию */
+}
+
+/* =============== СТИЛИ ЭЛЕМЕНТОВ =============== */
+
+.Name {
+  /* Убрано абсолютное позиционирование */
+  color: rgba(255, 255, 255, 0.98);
+  font-size: 43px;
+  background-color: rgba(0, 0, 0, 0.86);
+  border: 4px solid rgba(232, 232, 232, 0.8);
+  width: 210px;
+  height: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px; /* Для вертикального центрирования текста */
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Анимации */
+  animation-name: fadeInN, idlePulseN;
+  animation-duration: 1s, 2000ms;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0s, 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+
+.Bar {
+  /* Стили текста убраны, т.к. H1 был пуст. Если там будет текст, верните их. */
+  min-height: 5px; /* Просто линия-разделитель */
+  border-bottom: 8px solid rgba(0, 0, 0, 0.37);
+  width: 80%; /* Ширина относительно родителя (body) */
+  max-width: 2000px; /* Максимальная ширина */
+  min-width: 2000px;
+  box-sizing: border-box;
+  /* Центрируется автоматически благодаря align-items: center в body */
+}
+
+.Bla {
+  /* Убрано абсолютное позиционирование */
+  background-color: rgba(0, 0, 0, 0.86);
+  border: 4px solid rgba(232, 232, 232, 0.8);
+  border-radius: 8px;
+
+  /* Адаптивные размеры */
+  width: 90%; /* Ширина относительно родителя */
+  max-width: 1000px; /* Максимальная ширина */
+  min-height: 400px; /* Минимальная высота */
+  height: auto; /* Высота подстраивается под контент */
+  overflow-y: auto; /* Скролл, если контент не влезет */
+  padding: 25px; /* Внутренние отступы */
+  box-sizing: border-box;
+
+  /* Стили текста */
+  font-weight: bold;
+  text-align: left; /* Лучше для чтения текста */
+  color: LightGrey;
+  font-size: 23px;
+  line-height: 1.3; /* Улучшенная читаемость */
+  text-transform: none; /* Убрал uppercase для блока текста */
+  letter-spacing: 1px;
+
+  /* Анимации */
+  animation-name: fadeInB, idlePulseB;
+  animation-duration: 1s, 2000ms;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0s, 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+  /* Центрируется автоматически благодаря align-items: center в body */
+}
+
+.BackB {
+  /* Убрано абсолютное позиционирование */
+  opacity: 0; /* Начальное состояние для анимации fadeIn */
+  width: 95px;
+  height: 50px;
+  border-radius: 10px; /* Лучше px чем % для маленьких элементов */
+  background-color: rgba(0, 0, 0, 0.51);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.61);
+  border: 2px solid rgba(232, 232, 232, 0.67);
+  cursor: pointer;
+  color: rgb(120, 120, 120);
+  font-family: 'VT323', monospace;
+  font-size: 45px;
+  line-height: 1; /* Или настроить для лучшего вида */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex; /* Для центрирования текста внутри кнопки */
+  justify-content: center;
+  align-items: center;
+  /* Анимации */
+  animation-name: fadeIn, idlePulse;
+  animation-duration: 1s, 2000ms;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0s, 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+  /* Центрируется автоматически благодаря align-items: center в body */
+}
+
+/* Класс для показа кнопки через JS (если используется) */
+.BackB.visible {
+  opacity: 1;
+}
+
+
+/* =============== ФИКСИРОВАННЫЕ ЭЛЕМЕНТЫ =============== */
+
+#square, #square2 {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: -1; /* Помещаем под основной контент */
+    pointer-events: none; /* Чтобы не мешали кликам */
+}
+
+#square {
+  z-index: 9998;
+    bottom: -100vh; /* Скрыт внизу */
+    box-shadow:
+        0 0 100px 100px black,
+        0 0 50px 50px black inset,
+        20px 0 20px 20px black,
+        -20px 0 20px 20px black;
+    /* Нужна ли анимация для появления? */
+}
+
+#square2 {
+  z-index: 9999;
+    bottom: -115vh; /* Скрыт еще ниже */
+    box-shadow:
+        0 0 100px 100px black,
+        0 0 25px 25px black inset,
+        20px 0 20px 20px black,
+        -20px 0 20px 20px black;
+     /* Нужна ли анимация для появления? */
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100; /* Поверх всего */
+  background-image: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* =============== АНИМАЦИИ (без изменений) =============== */
+
+@keyframes fadeInN {
+  0% { border-color: rgba(55, 55, 55, 0.85); }
+  80% { border-color: rgba(251, 251, 251, 0.8); }
+  100% { border-color: rgba(232, 232, 232, 0.8); }
+}
+
+@keyframes idlePulseN {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.86);
+    border-color: rgba(232, 232, 232, 0.8);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.98);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: rgba(143, 143, 143, 0.75);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes fadeInB {
+  0% { border-color: rgba(55, 55, 55, 0.85); }
+  80% { border-color: rgba(251, 251, 251, 0.8); }
+  100% { border-color: rgba(232, 232, 232, 0.8); }
+}
+
+@keyframes idlePulseB {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.86);
+    border-color: rgba(232, 232, 232, 0.8);
+    border-radius: 8px;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: rgba(143, 143, 143, 0.75);
+    border-radius: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Немного снизу */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes idlePulse {
+  0%, 100% {
+    transform: translateY(0px);
+    color: rgb(120, 120, 120);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.61);
+  }
+  50% {
+    transform: translateY(3px);
+    color: rgba(117, 116, 116, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Чуть меньше тень при "нажатии" */
+  }
+}
+
+@keyframes greyPulse {
+  0% {
+      background-color: #555555; /* Средний серый */
+  }
+  50% {
+      background-color: #333333; /* Темнее */
+  }
+
+  100% {
+      background-color: #555555; /* Возвращаемся к среднему */
+  }
+}
