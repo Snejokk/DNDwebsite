@@ -24,6 +24,10 @@
 - **Фронтенд:** HTML, CSS, JavaScript
 - **ИИ-движок:** Google Gemini API
 
+## Живая демонстрация
+
+[Открыть сайт](https://snejokk.github.io/DNDwebsite/)
+
 ## Структура проекта
 
 ```
