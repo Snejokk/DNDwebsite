@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/ThirdPage.css"> <!-- Назовем файл CSS style.css или оставим ThirdPage.css -->
+    <style>
+      /* Стили для body лучше держать в CSS файле */
+      body {
+
+        min-height: 100vh; /* Чтобы body занимал всю высоту */
+        margin: 0; /* Убираем отступы по умолчанию */
+        padding: 20px; /* Добавим немного отступов по краям */
+        box-sizing: border-box; /* Чтобы padding не увеличивал размер body */
+
+        /* --- Добавляем Flexbox для управления дочерними элементами --- */
+        display: flex;
+        flex-direction: column; /* Элементы будут идти сверху вниз */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        gap: 20px; /* Пространство между основными блоками */
+      }
+      html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* убираем возможность листать */
+  }
+    </style>
+    <!-- Подключаем шрифты здесь -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Порядок элементов важен для потока -->
+    <div class="Name">ChangeLog</div>
+    <h1 class="Bar"></h1> <!-- Пустой H1? Может, текст сюда перенести? -->
+    <div class="Bla">
+        Here are some recent updates:
+        <ul>
+            <li>Added an animated background.</li>
+            <li>Integrated a neural network.</li>
+            <li>Added the ability to choose a pre-made prompt.</li>
+            <li>Added future buttons.</li>
+        </ul>
+    </div>
+    <button onclick="Quit()" class="BackB">quit</button>
+
+    <!-- Элементы с position: fixed остаются без изменений -->
+    <div id="square"></div>
+    <div id="square2"></div>
+    <div class="vignette"></div>
+
+    <!-- Скрипты лучше подключать в конце body -->
+    <script src="../JS/SecondPageScripts.js"></script>
+    <script src="../JS/ThirdANDfourPage1script.js"></script>
+</body>
+</html>

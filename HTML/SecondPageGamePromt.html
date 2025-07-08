@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Используйте либо внешний файл CSS, либо блок <style> -->
+    <link rel="stylesheet" href="../CSS/SecondPageCss.css"> <!-- Назовем CSS файл style.css -->
+    <style>
+        /* Стили для body лучше тоже вынести в CSS файл, но можно оставить и здесь */
+        body {
+            min-height: 100vh; /* Важно, чтобы body занимал высоту экрана */
+            margin: 0; /* Убрать отступы по умолчанию */
+            display: flex; /* Сделаем body flex-контейнером */
+            flex-direction: column; /* Чтобы .container и другие элементы шли друг под другом */
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер для кнопок -->
+    <div class="container">
+        <!-- Используем общий класс .Fpromt для стилей -->
+        <button id="Fpromt1" class="Fpromt">Easy</button>
+        <button onclick="openNewPage231231()" id="Fpromt2" class="Fpromt">Normal</button>
+        <button id="Fpromt3" class="Fpromt">Hard</button>
+        <button id="Fpromt4" class="Fpromt">Extreme</button>
+    </div>
+
+    <!-- Остальные элементы (виньетка, квадраты) остаются как есть -->
+    <div class="vignette"></div>
+    <div id="square"></div>
+    <div id="square1"></div>
+
+    <script src="../JS/SecondPageScripts.js"></script>
+</body>
+</html>
