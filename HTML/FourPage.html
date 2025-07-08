@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/FourPage.css"> <!-- Назовем файл CSS style.css или оставим ThirdPage.css -->
+    <style>
+      /* Стили для body лучше держать в CSS файле */
+      body {
+        min-height: 100vh; /* Чтобы body занимал всю высоту */
+        margin: 0; /* Убираем отступы по умолчанию */
+        padding: 20px; /* Добавим немного отступов по краям */
+        box-sizing: border-box; /* Чтобы padding не увеличивал размер body */
+
+        /* --- Добавляем Flexbox для управления дочерними элементами --- */
+        display: flex;
+        flex-direction: column; /* Элементы будут идти сверху вниз */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        gap: 20px; /* Пространство между основными блоками */
+      }
+      html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* убираем возможность листать */
+  }
+    </style>
+    <!-- Подключаем шрифты здесь -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Порядок элементов важен для потока -->
+    <div class="Name">Documentation</div>
+    <h1 class="Bar"></h1> <!-- Пустой H1? Может, текст сюда перенести? -->
+    <div class="Bla">
+        <h2>Welcome!</h2>
+        <p>Welcome to the comprehensive documentation for our innovative Dungeons & Dragons web interface project. This platform is being developed to offer a cutting-edge interactive D&D experience by seamlessly integrating a sophisticated artificial intelligence.</p>
+
+        <h2>Chat-Based Gameplay</h2>
+        <p>The core concept revolves around a dynamic chat-based gameplay model, where users interact directly with the AI, which takes on the role of the Dungeon Master. Through this chat interface, players can describe their actions, ask questions, and receive detailed responses and narrative progression driven by the AI.</p>
+
+        <h2>Customizable Difficulty and Prompts</h2>
+        <p>A pivotal feature designed to tailor the gameplay is the inclusion of various pre-configured prompts, categorized into distinct difficulty levels:</p>
+        <ul>
+            <li><strong>Easy</strong></li>
+            <li><strong>Normal</strong></li>
+            <li><strong>Hard</strong></li>
+            <li><strong>Extreme</strong></li>
+        </ul>
+        <p>Selecting a prompt at the beginning of your adventure will influence the initial setting, the types of challenges you encounter, and the overall complexity of the narrative managed by the AI, ensuring a unique experience for each play session and catering to players of all skill levels.</p>
+
+        <h2>Website Architecture</h2>
+        <p>The website architecture is structured for intuitive navigation, featuring:</p>
+        <ul>
+            <li><strong>Main Landing Page:</strong> serves as the entry point.</li>
+            <li><strong>Detailed Changelog Page:</strong> keeps users informed about the project's development and recent additions (e.g., animated background and neural network integration).</li>
+            <li><strong>Documentation Page:</strong> provides in-depth information about the platform.</li>
+            <li><strong>Dedicated Difficulty Selection Screen:</strong> allows you to choose your desired prompt difficulty before starting a game.</li>
+            <li><strong>Central Chat Page:</strong> is the heart of the D&D interaction with the AI.</li>
+        </ul>
+
+        <h2>Continuous Development</h2>
+        <p>We are committed to continuous development and improvement, with plans to introduce further enhancements and features (indicated by various placeholder elements throughout the site) to enrich the gameplay and elevate the user experience within our evolving AI-driven D&D universe.</p>
+    </div>
+    <button onclick="Quit()" class="BackB">quit</button>
+
+    <!-- Элементы с position: fixed остаются без изменений -->
+    <div id="square"></div>
+    <div id="square2"></div>
+    <div class="vignette"></div>
+
+    <!-- Скрипты лучше подключать в конце body -->
+    <script src="../JS/SecondPageScripts.js"></script>
+    <script src="../JS/ThirdANDfourPage1script.js"></script>
+</body>
+</html>

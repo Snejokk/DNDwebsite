@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../TEST/1.css">
+</head>
+<body>
+    <style>
+      body{
+        background-image: url("../FILES/niko-neko.gif");
+        background-size:cover;
+        background-repeat:repeat;
+      }
+    </style>
+<div class="element"> ALPHA </div>
+<script>
+    const myDiv2 = document.getElementById("myDiv2"); // Целевой элемент
+
+    // Функции анимации для myDiv2 (без изменений в логике)
+    function animateMyDiv2() {
+        const initialTopPx = myDiv2.offsetTop;
+        const viewportHeight = window.innerHeight;
+        const initialTopPercent = (initialTopPx / viewportHeight) * 100;
+        const targetTopPercent = 80; // Цель первой фазы
+        const duration = 1250;
+        const startTime = performance.now();
+
+        function easeInQuart(t) { return t * t * t * t; }
+
+        function stepMyDiv2(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const easedProgress = easeInQuart(progress);
+            const yPercent = initialTopPercent + (targetTopPercent - initialTopPercent) * easedProgress;
+            myDiv2.style.top = yPercent + '%';
+
+            if (progress < 1) {
+                requestAnimationFrame(stepMyDiv2);
+            } else {
+                animateSecondMyDiv2(yPercent); // Передаем конечный % дальше
+            }
+        }
+        requestAnimationFrame(stepMyDiv2);
+    }
+
+    function animateSecondMyDiv2(startTopPercent) {
+        const initialTopPercent = startTopPercent; // Начальный % - конец прошлой фазы
+        const targetTopPercent = 82; // Цель второй фазы
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function easeOutQuart(t) { return 1 - (--t) * t * t * t; }
+
+        function stepSecondMyDiv2(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progressSecond = Math.min(elapsedTime / duration, 1);
+            const easedProgressSecond = easeOutQuart(progressSecond);
+            // Рассчитываем % от начала ЭТОЙ фазы до цели ЭТОЙ фазы
+            const yPercent = initialTopPercent + (targetTopPercent - initialTopPercent) * easedProgressSecond;
+            myDiv2.style.top = yPercent + '%';
+
+            if (progressSecond < 1) {
+                requestAnimationFrame(stepSecondMyDiv2);
+            } else {
+                console.log("Вторая анимация для myDiv2 завершена!");
+                myDiv2.style.transition = '0.5s';
+                 // Убедимся, что финальное значение установлено точно
+                myDiv2.style.top = targetTopPercent + '%';
+            }
+        }
+        requestAnimationFrame(stepSecondMyDiv2);
+    }
+
+    // --- ЗАПУСК АНИМАЦИИ после загрузки DOM ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // Проверяем, что элемент найден перед запуском
+        if (myDiv2) {
+             // Устанавливаем position: relative через JS (АЛЬТЕРНАТИВА CSS)
+             // Если ты НЕ хочешь менять CSS, можно раскомментировать эту строку:
+             // myDiv2.style.position = 'relative';
+            animateMyDiv2();
+        } else {
+            console.error("Элемент #myDiv2 не найден!");
+        }
+    });
+</script>
+
+<script>
+    const myDiv3 = document.getElementById("myDiv3"); // Целевой элемент
+
+    // Функции анимации для myDiv3 (аналогичны myDiv2, но для другого элемента)
+    function animateMyDiv3() {
+        const initialTopPx = myDiv3.offsetTop;
+        const viewportHeight = window.innerHeight;
+        const initialTopPercent = (initialTopPx / viewportHeight) * 100;
+        const targetTopPercent = 80; // Цель первой фазы
+        const duration = 1250;
+        const startTime = performance.now();
+
+        function easeInQuart(t) { return t * t * t * t; }
+
+        function stepMyDiv3(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const easedProgress = easeInQuart(progress);
+            const yPercent = initialTopPercent + (targetTopPercent - initialTopPercent) * easedProgress;
+            myDiv3.style.top = yPercent + '%';
+
+            if (progress < 1) {
+                requestAnimationFrame(stepMyDiv3);
+            } else {
+                animateSecondMyDiv3(yPercent); // Передаем конечный % дальше
+            }
+        }
+        requestAnimationFrame(stepMyDiv3);
+    }
+
+    function animateSecondMyDiv3(startTopPercent) {
+        const initialTopPercent = startTopPercent; // Начальный % - конец прошлой фазы
+        const targetTopPercent = 82; // Цель второй фазы
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function easeOutQuart(t) { return 1 - (--t) * t * t * t; }
+
+        function stepSecondMyDiv3(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progressSecond = Math.min(elapsedTime / duration, 1);
+            const easedProgressSecond = easeOutQuart(progressSecond);
+            const yPercent = initialTopPercent + (targetTopPercent - initialTopPercent) * easedProgressSecond;
+            myDiv3.style.top = yPercent + '%';
+
+            if (progressSecond < 1) {
+                requestAnimationFrame(stepSecondMyDiv3);
+            } else {
+                // Исправлена ошибка в логе: было myDiv2, стало myDiv3
+                console.log("Вторая анимация для myDiv3 завершена!");
+                myDiv3.style.transition = '0.5s';
+                // Убедимся, что финальное значение установлено точно
+                myDiv3.style.top = targetTopPercent + '%';
+            }
+        }
+        requestAnimationFrame(stepSecondMyDiv3);
+    }
+
+     // --- ЗАПУСК АНИМАЦИИ после загрузки DOM ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // Проверяем, что элемент найден перед запуском
+        if (myDiv3) {
+             // Устанавливаем position: relative через JS (АЛЬТЕРНАТИВА CSS)
+             // Если ты НЕ хочешь менять CSS, можно раскомментировать эту строку:
+             // myDiv3.style.position = 'relative';
+            animateMyDiv3();
+        } else {
+            console.error("Элемент #myDiv3 не найден!");
+        }
+    });
+</script>
+
+</body>
+</html>
