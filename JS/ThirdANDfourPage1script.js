@@ -27,7 +27,7 @@ function Quit() {
       requestAnimationFrame(animateSquare);
     } else {
       square.style.bottom = '0';
-      window.open("../FirstPage.html", "_self");
+      window.open("../index.html", "_self");
     }
   }
 
