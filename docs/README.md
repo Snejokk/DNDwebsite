@@ -5,7 +5,6 @@
 
 # DND с ИИ
 
-![Статус сборки](https://github.com/<YOUR_GITHUB_USERNAME>//workflows/CI/badge.svg)
 ![Лицензия](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Звезды GitHub](https://img.shields.io/github/stars/<YOUR_GITHUB_USERNAME>/.svg?style=social)
 
